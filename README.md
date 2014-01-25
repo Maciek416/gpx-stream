@@ -1,7 +1,7 @@
 gpx-stream
 ==========
 
-[![NPM](https://nodei.co/npm/gps-stream.png)](https://nodei.co/npm/gpx-stream/)
+[![NPM](https://nodei.co/npm/gpx-stream.png)](https://nodei.co/npm/gpx-stream/)
 
 Stream tracked points (`<trkpt/>` nodes) from a GPX 1.1 input string. 
 
