@@ -1,0 +1,27 @@
+{
+  "name": "gpx-stream",
+  "version": "0.0.1",
+  "description": "Node module for streaming tracked points out of a GPX 1.1 string",
+  "private": false,
+  "engines": {
+    "node": ">= 0.10.x",
+    "npm": "1.2.x"
+  },
+  "main": "gpx-stream",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Maciek416/gpx-stream.git"
+  },
+  "devDependencies": {
+    "mocha": ">= 1.9.0",
+    "should": ">= 1.2.2"
+  },
+  "dependencies": {
+    "selax": "0.0.3"
+  },
+  "keywords": [
+    "gps", "coordinates", "gpx", "garmin"
+  ],
+  "author": "Maciej Adwent (http://github.com/Maciek416)",
+  "license": "BSD"
+}
