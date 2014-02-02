@@ -1,6 +1,6 @@
 {
   "name": "gpx-stream",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node module for streaming tracked points out of a GPX 1.1 string",
   "private": false,
   "engines": {
