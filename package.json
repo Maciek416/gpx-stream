@@ -17,7 +17,7 @@
     "should": ">= 1.2.2"
   },
   "dependencies": {
-    "selax": "0.0.3"
+    "selax": "0.0.4"
   },
   "keywords": [
     "gps", "coordinates", "gpx", "garmin"
