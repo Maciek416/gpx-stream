@@ -3,6 +3,16 @@ var Selax = require('selax');
 
 var Transform = require('stream').Transform;
 
+var makeNodeFilter = function(name) {
+  return function(nodeName, node) {
+    return node.name === nodeName;
+  }.bind(this, name);
+};
+
+// FIXME: selax nodes need to be improved so that finding nodes isn't tedious.
+var timeFilter = makeNodeFilter('time');
+var elevationFilter = makeNodeFilter('ele');
+
 var PointStream = function() {
   Transform.call(this, { objectMode: true });
 
@@ -31,13 +41,13 @@ PointStream.prototype._flush = function(callback) {
 
 PointStream.prototype.flush = function() {
   // empty the buffer of computed data
-  while(this.outputBuffer.length > 0){
+  while(this.outputBuffer.length > 0) {
     var p = this.outputBuffer.shift();
     this.push({
       lat: parseFloat(p.attr('lat')),
       lon: parseFloat(p.attr('lon')),
-      time: p.children.filter(function(p){ return p.name === 'time'; })[0].text(),
-      elevation: p.children.filter(function(p){ return p.name === 'ele'; })[0].text()
+      time: p.children.filter(timeFilter)[0].text(),
+      elevation: p.children.filter(elevationFilter)[0].text()
     });
   }
 };
