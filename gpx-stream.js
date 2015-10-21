@@ -46,8 +46,8 @@ PointStream.prototype.flush = function() {
     this.push({
       lat: parseFloat(p.attr('lat')),
       lon: parseFloat(p.attr('lon')),
-      time: p.children.filter(timeFilter)[0].text(),
-      elevation: p.children.filter(elevationFilter)[0].text()
+      time: (p.children.filter(timeFilter)[0] ? p.children.filter(timeFilter)[0].text() : null),
+      elevation: (p.children.filter(elevationFilter)[0] ? p.children.filter(elevationFilter)[0].text() : null)
     });
   }
 };
